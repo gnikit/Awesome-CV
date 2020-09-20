@@ -14,6 +14,8 @@ resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
 
 cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
 	$(CC) -interaction=nonstopmode -output-directory=$(EXAMPLES_DIR) $<
+	biber $(EXAMPLES_DIR)/cv
+	$(CC) -interaction=nonstopmode -output-directory=$(EXAMPLES_DIR) $<
 
 coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
 	$(CC) -interaction=nonstopmode -output-directory=$(EXAMPLES_DIR) $<
